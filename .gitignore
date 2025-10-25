@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+uploads/
+static/posters/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.txt
+*.doc
+*.docx
+.env
