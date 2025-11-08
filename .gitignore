@@ -6,7 +6,6 @@ static/posters/
 *.jpeg
 *.png
 *.gif
-*.txt
 *.doc
 *.docx
 .env
