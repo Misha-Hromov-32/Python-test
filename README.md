@@ -32,7 +32,7 @@ Python-test/
 ## Старт
 ```bash
 # 1. Клонируйте репозиторий
-git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ>
+git clone https://github.com/Misha-Hromov-32/Python-test.git
 cd fastapi/Python-test
 
 # 2. Создайте и активируйте виртуальное окружение (опционально)
@@ -55,11 +55,6 @@ uvicorn main:app --reload --port 8165
 | `JWT_SECRET`  | Секрет для подписи JWT                | `change-me-in-production`      |
 | `PORT`        | Порт для запуска (используется в примерах uvicorn) | `8165` |
 
-Создайте файл `.env`, чтобы переопределить значения (опционально):
-```
-JWT_SECRET=super-secret-value
-```
-
 ## Работа с API
 
 1. **Логин и получение токена**
@@ -70,25 +65,6 @@ JWT_SECRET=super-secret-value
     ```
 
     В ответе придёт `access_token`, `token_type` и `expires_in` (TTL в секундах).
-
-2. **Доступ к защищённым маршрутам**
-    ```bash
-    TOKEN=<полученный токен>
-
-    # Профиль пользователя и список фильмов
-    curl http://localhost:8165/user ^
-         -H "Authorization: Bearer %TOKEN%"
-
-    # Добавление фильма (пример с curl и формой)
-    curl -X POST http://localhost:8165/add_film ^
-         -H "Authorization: Bearer %TOKEN%" ^
-         -F "name=Новый фильм" ^
-         -F "director=Режиссёр" ^
-         -F "cost=1000000" ^
-         -F "watched=true"
-    ```
-
-    Для доступа к HTML-форме `/add_film` авторизуйтесь в браузере, установив заголовок `Authorization` (см. [документацию FastAPI о Swagger UI](https://fastapi.tiangolo.com/advanced/security/http-basic-auth/)).
 
 ## Тестовые данные
 - Пользователь: `admin` / `secret`
