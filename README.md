@@ -33,18 +33,18 @@ Python-test/
 ```bash
 # 1. Клонируйте репозиторий
 git clone https://github.com/Misha-Hromov-32/Python-test.git
-cd fastapi/Python-test
+cd Python-test
 
 # 2. Создайте и активируйте виртуальное окружение (опционально)
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-# source .venv/bin/activate  # macOS/Linux
+python -m venv .env
+.env\Scripts\activate  # Windows
+# source .env/bin/activate  # macOS/Linux
 
 # 3. Установите зависимости
- pip install -r requirements.txt
+pip install -r requirements.txt
 
 # 4. Запустите сервер разработки
-uvicorn main:app --reload --port 8165
+python main.py
 ```
 
 После запуска приложение будет доступно по адресу [http://localhost:8165](http://localhost:8165).
