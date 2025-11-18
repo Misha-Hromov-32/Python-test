@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить новый фильм</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Добавить новый фильм</h1>
+        <form method="post" action="/add_film" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Название фильма:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="director">Режиссер:</label>
+                <input type="text" id="director" name="director" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cost">Бюджет ($):</label>
+                <input type="number" id="cost" name="cost" min="0" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="watched" value="true">
+                    Фильм уже просмотрен
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="description_file">Файл с описанием:</label>
+                <input type="file" id="description_file" name="description_file" accept=".txt,.doc,.docx">
+            </div>
+            <div class="form-group">
+                <label for="poster">Обложка фильма:</label>
+                <input type="file" id="poster" name="poster" accept=".jpg,.jpeg,.png,.gif">
+            </div>
+            <button type="submit">Добавить фильм</button>
+        </form>
+        <div style="margin-top: 20px;">
+            <a href="/movies">Все фильмы</a> | 
+            <a href="/study">О ВУЗе</a>
+        </div>
+    </div>
+</body>
+</html>
